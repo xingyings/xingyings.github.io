@@ -1,7 +1,7 @@
 # Basic
-title: 潘柏信
-subtitle: 个人站
-description: 欢迎来到我的个人站~
+title: 博客
+subtitle: 个人博客站
+description: 欢迎来到我的个人博客站~
 # 头像里面的标题
 avatarTitle: leopardpan
 # 头像里面的描述
@@ -18,14 +18,14 @@ comment:
     # uyan: 2143225  # 有言id,登录有言官网申请
 
 # Social
-social:
-    weibo: 5366874726 
-    github: leopardpan
+#social:
+    #weibo: 5366874726 
+   # github: leopardpan
     # zhihu: panpanleopard
     # juejin: xxx
-    jianshu: 2ada30d8d0f7
+   # jianshu: 2ada30d8d0f7
     # twitter: 
-    mail: leopardpan@icloud.com
+    #mail: leopardpan@icloud.com
 
 
 # 百度统计 
@@ -36,7 +36,7 @@ baidu:
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
 ga:
-    id: UA-84134159-3  
+    id:  
     host: auto  
 
 
@@ -67,7 +67,6 @@ blog_button:
 nav:
     - {title: 所有文章, description: archive, url: '/archive'}   
     - {title: 标签, description: tags, url: '/tags'}      
-    - {title: 技术支持, description: support, url: '/support'}      
     - {title: 关于我, description: about, url: '/about'}   
     
 
