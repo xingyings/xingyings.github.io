@@ -1,11 +1,11 @@
 # Basic
-title: 博客
-subtitle: 个人博客站
-description: 欢迎来到我的个人博客站~
+title: 星辰镇
+subtitle: 星辰
+description: 欢迎来到星辰镇~
 # 头像里面的标题
-avatarTitle: leopardpan
+avatarTitle: xcz
 # 头像里面的描述
-avatarDesc: iOS / 机器学习
+avatarDesc: 星辰镇
 url: "http://leopardpan.cn"
 
 # 博客是否自动生成目录，false为不生成
@@ -31,7 +31,7 @@ comment:
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
 baidu:
-    id: 8ba1c6be0953b6f9c2ba38e57f615421  
+    id: d7d0f2d4210885b009fc66d7831bd7de  
 
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
@@ -61,12 +61,11 @@ cover_color: clear
 
 # The blog button should not be removed.
 blog_button:
-    title: 博客主页
+    title: 星辰镇主页
 
 # Navigation buttons in the front page.s
 nav:
-    - {title: 所有文章, description: archive, url: '/archive'}   
-    - {title: 标签, description: tags, url: '/tags'}      
+    - {title: 公告, description: archive, url: '/archive'}   
     - {title: 关于我, description: about, url: '/about'}   
     
 
