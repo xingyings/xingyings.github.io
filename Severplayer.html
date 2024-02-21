@@ -5,26 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>玩家数据实时刷新页面</title>
     <style>
+        /* 全局样式 */
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
         }
 
-        .section-index {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        /* 标题样式 */
+        h1 {
+            color: #333;
         }
 
+        /* 玩家列表容器样式 */
+        #player-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* 玩家项样式 */
         .player-item {
-            margin: 10px;
+            background-color: #eaeaea;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 玩家姓名样式 */
+        .player-name {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* 玩家头像样式 */
+        .player-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         // 函数来获取服务器状态并更新页面
         function fetchServerStatus() {
-            $.get('http://mc-tcc.com/status', function(data) {
+            $.get('https://tcc-mc.com/OnlinePlayer', function(data) {
                 // 假设数据结构如下：{ playersOnline: [{ name: 'MagmaLOVE', img: '...' }, ...] }
                 updatePlayerList(data.playersOnline);
             });
