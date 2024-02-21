@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MC TCC Server Status</title>
+    <title>玩家数据实时刷新页面</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,17 +11,49 @@
             margin-top: 50px;
         }
 
-        #server-info {
-            margin-top: 20px;
+        .section-index {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .player-item {
+            margin: 10px;
         }
     </style>
+    <script>
+        // 函数来获取服务器状态并更新页面
+        function fetchServerStatus() {
+            $.get('http://mc-tcc.com/status', function(data) {
+                // 假设数据结构如下：{ playersOnline: [{ name: 'MagmaLOVE', img: '...' }, ...] }
+                updatePlayerList(data.playersOnline);
+            });
+        }
+
+        // 更新玩家列表
+        function updatePlayerList(players) {
+            const playerListContainer = $('#player-list');
+            playerListContainer.empty(); // 清空现有的玩家列表
+            players.forEach(player => {
+                const playerItem = $('<div>', {
+                    class: 'player-item',
+                    text: `${player.name}`,
+                    // 这里可以添加更多样式或属性
+                });
+                playerListContainer.append(playerItem);
+            });
+        }
+
+        // 页面加载完成后获取服务器状态
+        $(document).ready(function() {
+            fetchServerStatus();
+            // 每60秒更新一次服务器状态
+            setInterval(fetchServerStatus, 60000);
+        });
+    </script>
 </head>
 <body>
-    <h1>MC TCC Server Status</h1>
-    <div id="server-info">
-        <h2>Server Name: MC TCC Server</h2>
-        <p>Players Online: N/A</p>
-        <p>Server Version: N/A</p>
-    </div>
+    <h1>玩家数据实时刷新页面</h1>
+    <div id="player-list"></div>
 </body>
 </html>
