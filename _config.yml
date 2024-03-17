@@ -1,12 +1,12 @@
 # Basic
-title: 星辰镇
-subtitle: 星辰
-description: 欢迎来到星辰镇~
+title: 凤梨
+subtitle: 自治区
+description: 欢迎来到~
 # 头像里面的标题
-avatarTitle: 星辰与大海
+avatarTitle: 404 Not Foud
 # 头像里面的描述
-avatarDesc: 星辰镇
-url: "http://leopardpan.cn"
+avatarDesc: 凤梨自治区
+url: "fengliteam.github.io"
 
 # 博客是否自动生成目录，false为不生成
 enableToc: true
@@ -61,7 +61,7 @@ cover_color: clear
 
 # The blog button should not be removed.
 blog_button:
-    title: 星辰镇主页
+    title: 自治区主页
 
 # Navigation buttons in the front page.s
 nav:
