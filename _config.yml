@@ -1,9 +1,9 @@
 # Basic
 title: 凤梨
 subtitle: 自治区
-description: 欢迎来到~
+description: 欢迎~
 # 头像里面的标题
-avatarTitle: 404 Not Foud
+avatarTitle: 凤梨
 # 头像里面的描述
 avatarDesc: 凤梨自治区
 url: "fengliteam.github.io"
@@ -61,7 +61,7 @@ cover_color: clear
 
 # The blog button should not be removed.
 blog_button:
-    title: 自治区主页
+    title: 主页
 
 # Navigation buttons in the front page.s
 nav:
@@ -73,5 +73,3 @@ nav:
 gems: [jekyll-paginate,jekyll-sitemap]
 paginate: 20
 paginate_path: "page/:num/"
-
-
