@@ -67,7 +67,7 @@ blog_button:
 nav:
     - {title: 公告, description: archive, url: '/archive'}   
     - {title: 关于我们, description: about, url: '/about'}   
-    
+    - {title:更多, description: gengduo, url: '/gengduo'}  
 
 # Pagination
 gems: [jekyll-paginate,jekyll-sitemap]
