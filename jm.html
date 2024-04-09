@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>解密网站</title>
+    <style>
+        /* 设置整个页面的样式 */
+        body, html {
+            height: 100%; /* 使页面高度占满整个屏幕 */
+            margin: 0; /* 移除默认的外边距 */
+            display: flex; /* 使用flex布局 */
+            justify-content: center; /* 水平居中内容 */
+            align-items: center; /* 垂直居中内容 */
+            background: linear-gradient(45deg, blue, indigo, violet); /* 设置五彩斑斓的蓝色背景 */
+        }
+
+        /* 容器样式，用于包含密码输入框和按钮 */
+        .container {
+            text-align: center; /* 使容器内的文本居中 */
+        }
+
+        /* 密码输入框样式 */
+        .password-input {
+            padding: 10px; /* 输入框内边距 */
+            font-size: 16px; /* 字体大小 */
+            margin: 10px; /* 外边距 */
+            border: 2px solid #fff; /* 白色边框 */
+            border-radius: 5px; /* 圆角边框 */
+        }
+
+        /* 抖动动画 */
+        .shake {
+            /* 定义shake动画，用于输入错误时的抖动效果 */
+            animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+        /* 动画关键帧 */
+        @keyframes shake {
+            /* 定义抖动的关键帧 */
+            10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+        
+            20%, 80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+        
+            40%, 60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="password" id="passwordInput" class="password-input" placeholder="输入密码">
+        <button onclick="submitPassword()">交卷</button>
+        <div id="message" style="color: white;"></div>
+    </div>
+
+    <script>
+        let attempts = 0; // 记录尝试次数
+        const passwordInput = document.getElementById('passwordInput'); // 获取密码输入框元素
+        const messageDiv = document.getElementById('message'); // 获取消息显示元素
+
+        // 提交密码的函数
+        function submitPassword() {
+            const inputPassword = passwordInput.value; // 获取用户输入的密码
+            if (inputPassword === '1') { // 如果密码正确
+                window.location.href = 'https://bilibili.com'; // 跳转到Bilibili
+            } else {
+                attempts++; // 增加尝试次数
+                if (attempts === 1) { // 如果是第一次尝试
+                    passwordInput.classList.add('shake'); // 添加抖动效果
+                    messageDiv.textContent = '提示'; // 显示提示信息
+                }
+            }
+        }
+
+        // 监听动画结束事件，移除抖动效果
+        passwordInput.addEventListener('animationend', function() {
+            this.classList.remove('shake');
+        });
+    </script>
+</body>
+</html>
