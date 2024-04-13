@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker Interface</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    color: white;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+
+  .loading {
+    color: white;
+    font-weight: bold;
+  }
+
+  .result {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div id="loading" class="loading">Loading...</div>
+  <div id="result" class="result">Loading...</div>
+  <textarea id="codeArea" rows="10" cols="50" placeholder="Your code here"></textarea>
+  <script>
+    // 模拟加载过程的JavaScript代码
+    function simulateLoading(time, result) {
+      const loadingElement = document.getElementById('loading');
+      const resultElement = document.getElementById('result');
+
+      const startTime = new Date().getTime();
+      const intervalId = setInterval(() => {
+        const currentTime = new Date().getTime();
+        const elapsedTime = currentTime - startTime;
+
+        if (elapsedTime >= time) {
+          clearInterval(intervalId);
+          resultElement.textContent = result;
+        } else {
+          loadingElement.textContent = Math.round(elapsedTime / time * 100) + '%';
+        }
+      }, 250);
+    }
+
+    // 当用户提交代码时，模拟加载并显示结果
+    document.getElementById('codeArea').addEventListener('input', () => {
+      const code = document.getElementById('codeArea').value;
+      const time = Math.floor(Math.random() * 6000) + 5000; // 随机生成5到10秒的加载时间
+      const result = '测试'; // 最终显示的指定字符
+
+      simulateLoading(time, result);
+    });
+  </script>
+</div>
+</body>
+</html>
