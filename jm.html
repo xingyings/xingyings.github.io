@@ -72,13 +72,13 @@
         // 提交密码的函数
         function submitPassword() {
             const inputPassword = passwordInput.value; // 获取用户输入的密码
-            if (inputPassword === '1') { // 如果密码正确
-                window.location.href = 'https://bilibili.com'; // 跳转到Bilibili
+            if (inputPassword === '705') { // 如果密码正确
+                window.location.href = 'fengliteam.github.io/mm'; // 跳转到Bilibili
             } else {
                 attempts++; // 增加尝试次数
                 if (attempts === 1) { // 如果是第一次尝试
                     passwordInput.classList.add('shake'); // 添加抖动效果
-                    messageDiv.textContent = '提示'; // 显示提示信息
+                    messageDiv.textContent = '输入『Your Class』'; // 显示提示信息
                 }
             }
         }
