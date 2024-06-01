@@ -85,41 +85,54 @@
     <div class="flame" id="flame"></div>
   </div>
 </div>
-<button onclick="revealBeforeLetter()">点亮蜡烛，阅读信件</button>
+<audio id="hbdMusic" controls autoplay loop>
+  <source src="hbd.mp3" type="audio/mpeg">
+  您的浏览器不支持音频播放。
+</audio>
 <div class="letter-before" id="letterBefore">
   <div class="reveal" id="revealBefore"></div>
+</div>
+<div class="message" id="message">
+  <h2>请写下你的愿望：</h2>
+  <textarea id="wishText"></textarea>
+  <button onclick="revealWish()">提交</button>
 </div>
 <div class="letter-after" id="letterAfter">
   <div class="reveal" id="revealAfter"></div>
 </div>
-<audio id="hbdMusic" controls>
-  <source src="hbd.mp3" type="audio/mpeg">
-  您的浏览器不支持音频播放。
-</audio>
 
 <script>
-  function revealBeforeLetter() {
+   // 音乐自动播放
+  document.getElementById('hbdMusic').play();
+
+  // 设置第一段文本显示时间
+  setTimeout(function() {
     document.getElementById('letterBefore').style.display = 'block';
     var beforeLetterContent = "亲爱的钟佳悦：\n\n在你许愿之前，我想对你说，你的每一个生日都是特别的，因为你让这个世界变得更加美好。\n\n愿你的生活充满快乐和爱。\n\n你的朋友";
     var revealBeforeDiv = document.getElementById('revealBefore');
     revealBeforeDiv.textContent = beforeLetterContent;
     revealBeforeDiv.style.animation = 'revealText 5s steps(' + beforeLetterContent.length + ', end) forwards';
-    revealBeforeDiv.addEventListener('animationend', function() {
-      document.getElementById('message').style.display = 'block';
-    });
-  }
+  }, 4000); // 4秒后显示第一段文本
 
-  function revealAfterLetter() {
-    document.getElementById('letterAfter').style.display = 'block';
-    var afterLetterContent = "亲爱的钟佳悦：\n\n现在你已经许下了愿望，我想对你说，无论你的愿望是什么，我都希望它能实现。\n\n你值得所有美好的事物。\n\n永远支持你的朋友";
-    var revealAfterDiv = document.getElementById('revealAfter');
-    revealAfterDiv.textContent = afterLetterContent;
-    revealAfterDiv.style.animation = 'revealText 5s steps(' + afterLetterContent.length + ', end) forwards';
-    revealAfterDiv.addEventListener('animationend', function() {
-      document.getElementById('hbdMusic').play
-      document.getElementById('hbdMusic').play();
-    });
+  // 愿望提交函数
+  function revealWish() {
+    var wishText = document.getElementById('wishText').value;
+    document.getElementById('message').style.display = 'none';
+    document.getElementById('flame').style.display = 'none'; // 提交愿望后熄灭蜡烛
+    setTimeout(function() {
+      document.getElementById('letterAfter').style.display = 'block';
+      var afterLetterContent = "亲爱的钟佳悦：\n\n现在你已经许下了愿望，我想对你说，无论你的愿望是什么，我都希望它能实现。\n\n你值得所有美好的事物。\n\n永远支持你的朋友";
+      var revealAfterDiv = document.getElementById('revealAfter');
+      revealAfterDiv.textContent = afterLetterContent;
+      revealAfterDiv.style.animation = 'revealText 5s steps(' + afterLetterContent.length + ', end) forwards';
+      revealAfterDiv.addEventListener('animationend', function() {
+        document.getElementById('hbdMusic').play(); // 愿望显示完成后播放音乐
+      });
+    }, 4000); // 愿望提交后4秒显示第二段文本
   }
 </script>
 </body>
 </html>
+
+
+  
