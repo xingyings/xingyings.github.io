@@ -1,7 +1,4 @@
-
-# 更多页面
-
-## 版权与运营
+# 版权与运营
 
 ![星影](https://file.imgcc.cloud/images/2024/10/01/80d1e13c1af4b9ff1cb122b9b357bec0.png)  
 
@@ -9,7 +6,7 @@
 
 ---
 
-### 友情链接
+## 友情链接
 
 - [哔哩哔哩](https://www.bilibili.com)
 - [Bing](https://www.bing.com)
