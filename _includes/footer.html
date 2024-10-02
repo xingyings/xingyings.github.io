@@ -1,45 +1,49 @@
 <section class="footer">
     <footer>
-        <div class = "footer_div">  
-        <nav class="cover-navigation navigation--social">
-          <ul class="navigation">
-
-        
-
-          
-          
-          <!-- RSS -->
-          <li class="navigation__item_social">
-            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
-              <div class="footer-social-icon" style="background:url(/images/rss.png);"></div>
-              <span class="label">RSS</span>
-            </a>
-          </li>
-
-          </ul>
-        </nav>
-
+        <div class="footer_div">  
+            <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+                    <!-- RSS -->
+                    <li class="navigation__item_social">
+                        <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+                            <div class="footer-social-icon" style="background:url(/images/rss.png);"></div>
+                            <span class="label">RSS</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
 
-        <div class = "footer_div">  
-           <p class="copyright text-muted">
-            Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}  |
-            <iframe
-                style="margin-left: 2px; margin-bottom:-5px;"
-                frameborder="0" scrolling="0" width="91px" height="20px"
-                src="" >
-            </iframe>
+        <div class="footer_div">  
+            <p class="copyright text-muted">
+                Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}  |
+                <iframe
+                    style="margin-left: 2px; margin-bottom:-5px;"
+                    frameborder="0" scrolling="0" width="91px" height="20px"
+                    src="">
+                </iframe>
             </p>
-        	<div align="right">
-    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-          <!-- 访问统计 -->
-          <span id="busuanzi_container_site_pv">
-            本站总访问量
-            <span id="busuanzi_value_site_pv"></span>次
-          </span>
-
+            <div align="right">
+                <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+                <!-- 访问统计 -->
+                <span id="busuanzi_container_site_pv">
+                    本站总访问量
+                    <span id="busuanzi_value_site_pv"></span>次
+                </span>
+            </div>
         </div>
-        <div>
+
+        <!-- 添加 Twikoo 评论系统 -->
+        <div class="twikoo-container">
+            <div id="twikoo-container"></div>
+            <script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+            <script>
+                twikoo.init({
+                    envId: 'YOUR_ENV_ID', // 替换为你的 Cloudflare Workers KV Environment ID
+                    el: '#twikoo-container',
+                    path: '{{ page.url }}', // 使用 Jekyll 的变量来设置每篇文章的唯一路径
+                });
+            </script>
+        </div>
     </footer>
 </section>
