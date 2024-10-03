@@ -1,6 +1,6 @@
 # Basic
-title: 单向地铁
-subtitle: 官网
+title: 星影
+subtitle: 的博客
 description: 你好 \(@^0^@)/
 # 头像里面的标题
 avatarTitle: ©星影
@@ -68,7 +68,6 @@ nav:
     - {title: 公告, description: archive, url: '/archive'}   
     - {title: 关于我们, description: about, url: '/about'}   
     - {title: 更多, description: gengduo, url: '/many'}  
-    - {title: 测试, description: gengduo, url: '/test'}  
 # Pagination
 gems: [jekyll-paginate,jekyll-sitemap]
 paginate: 20
