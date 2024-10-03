@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>403 错误 - 未经授权的访问</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 50px;
+  }
+  .error-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  .additional-info {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+<div class="error-container">
+  <h1>403 错误 - 未经授权的访问</h1>
+  <p>您没有权限访问此页面。以下是额外信息供管理员检查：</p>
+  <div class="additional-info">
+    <p>您的IP地址：<span id="user-ip">正在获取...</span></p>
+    <p>使用的浏览器：<span id="user-agent"></span></p>
+    <p>Ray ID：<span id="ray-id"></span></p>
+  </div>
+</div>
+
+<script>
+// 生成UUID的函数
+function generateUUID() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0,
+        v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+// 显示用户浏览器信息
+document.getElementById('user-agent').textContent = navigator.userAgent;
+
+// 显示生成的UUID作为Ray ID
+var rayID = generateUUID();
+document.getElementById('ray-id').textContent = rayID;
+
+// 使用ip-api.com获取用户IP地址
+fetch('http://ip-api.com/json')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('user-ip').textContent = data.query;
+  })
+  .catch(error => {
+    document.getElementById('user-ip').textContent = '无法获取IP地址';
+  });
+</script>
+</body>
+</html>
