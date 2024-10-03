@@ -1,0 +1,77 @@
+# 音乐播放器测试页面 - 管理员测试页面
+
+请先输入密码以访问音乐播放器：
+
+<div id="password-form" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <form onsubmit="checkPassword(event)">
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">提交</button>
+    </form>
+</div>
+
+<div id="music-player" style="display: none;">
+    <h2>音乐播放器</h2>
+    <details>
+    <summary>点击展开播放器</summary>
+
+    - **Aoharu.mp3**
+      <audio controls src="/music/Aoharu.mp3">
+        您的浏览器不支持 audio 元素。
+      </audio>
+
+    - **Artifact.mp3**
+      <audio controls src="/music/Artifact.mp3">
+        您的浏览器不支持 audio 元素。
+      </audio>
+
+    - **ConstantModerato.mp3**
+      <audio controls src="/music/ConstantModerato.mp3">
+        您的浏览器不支持 audio 元素。
+      </audio>
+
+    - **ConstantModerato8bit.mp3**
+      <audio controls src="/music/ConstantModerato8bit.mp3">
+        您的浏览器不支持 audio 元素。
+      </audio>
+
+    - **Hello to Halo.mp3**
+      <audio controls src="/music/Hello%20to%20Halo.mp3">
+        您的浏览器不支持 audio 元素。
+      </audio>
+
+    - **JUMP!BEAT!PLAY!(伴奏).mp3**
+      <audio controls src="/music/JUMP!BEAT!PLAY!(伴奏).mp3">
+        您的浏览器不支持 audio 元素。
+      </audio>
+
+    - **Raise the Huddle 晄轮大祭运动会·.mp3**
+      <audio controls src="/music/Raise%20the%20Huddle%20滉轮大祭运动会·.mp3">
+        您的浏览器不支持 audio 元素。
+      </audio>
+
+    - **Signal of Abydos.mp3**
+      <audio controls src="/music/Signal%20of%20Abydos.mp3">
+        您的浏览器不支持 audio 元素。
+      </audio>
+
+    - **准备出发!(伴奏).mp3**
+      <audio controls src="/music/准备出发!(伴奏).mp3">
+        您的浏览器不支持 audio 元素。
+      </audio>
+
+    </details>
+</div>
+
+<script>
+function checkPassword(event) {
+    event.preventDefault();
+    const password = document.getElementById('password').value;
+    if (password === '123456') {
+        document.getElementById('password-form').style.display = 'none';
+        document.getElementById('music-player').style.display = 'block';
+    } else {
+        alert('密码错误，请重试。');
+    }
+}
+</script>
